@@ -6,7 +6,7 @@
 
 @layer base {
   .adaptive-text {
-    @apply text-gray-800 dark:text-white;
+    @apply text-gray-900 dark:text-white;
   }
 
   .adaptive-background {
