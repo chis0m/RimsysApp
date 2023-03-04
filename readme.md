@@ -89,7 +89,3 @@ git clone https://github.com/chis0m/laranuxt.git && cd laranuxt; yarn; composer 
     yarn style
     yarn analyse
 ```
-
-## Author
-Ejim Chisom - ejimchisom@gmail.com
-PLease do reachout for any clearification. Thank you. Cheers!😉
