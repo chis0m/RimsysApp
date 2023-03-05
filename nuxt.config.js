@@ -81,7 +81,6 @@ export default {
   axios: {
     credentials: true,
     baseURL: process.env.API_URL,
-    browserBaseURL: process.env.BROWSER_BASE_URL,
     headers: {
       accept: 'application/json',
     },
