@@ -8484,10 +8484,10 @@ nuxt-storm@^1.0.8:
   dependencies:
     consola "^2.15.3"
 
-nuxt-tailvue@^1.0.10:
-  version "1.0.94"
-  resolved "https://registry.npmjs.org/nuxt-tailvue/-/nuxt-tailvue-1.0.94.tgz"
-  integrity sha512-VELHi9LcL3xmgTbWaYX2t1H6Ebj+msMJphyFL30lCH9ycfFYMVVAzhfpPes+dYUNJZhHJWtPIgk+ok7PjKpH3A==
+nuxt-tailvue@^1.0.95:
+  version "1.0.95"
+  resolved "https://registry.yarnpkg.com/nuxt-tailvue/-/nuxt-tailvue-1.0.95.tgz#88b31463dac2dba9e21328d5733806aac274f006"
+  integrity sha512-8DVluxBJak/X2QZ8WpiJSbEwkKbhVF2x8OURKWhfYuXsj5cDlXE4LhnZfr/Otj6KdcTCEVGnQt96lqE+WQG02A==
   dependencies:
     tv-button latest
     tv-icon latest
