@@ -50,13 +50,12 @@ jobs:
       run: |
         # set Repository URI
         AWS_REPOSITORY_URI=$ECR_REGISTRY/$ECR_REPOSITORY
-        echo "${AWS_REPOSITORY_URI}"
-        # # Build a docker container and push it to ECR
-        # git_hash=$(git rev-parse --short "$GITHUB_SHA")
-        # docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
-        # echo "Pushing image to ECR..."
-        # docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        # sed -i "s@${AWS_REPOSITORY_URI}:[a-z0-9]*@${AWS_REPOSITORY_URI}:${IMAGE_TAG}@g" gitops/environments/${{ env.DEPLOYMENT_PATH }}/deployment-be.yaml
+        # Build a docker container and push it to ECR
+        git_hash=$(git rev-parse --short "$GITHUB_SHA")
+        docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+        echo "Pushing image to ECR..."
+        docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
+        sed -i "s@${AWS_REPOSITORY_URI}:[a-z0-9]*@${AWS_REPOSITORY_URI}:${IMAGE_TAG}@g" gitops/environments/${{ env.DEPLOYMENT_PATH }}/deployment-be.yaml
 
 
 
