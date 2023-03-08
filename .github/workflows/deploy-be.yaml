@@ -5,7 +5,7 @@ name: CI
 
 on:
   push:
-    branches: [ deploy-dev, master ]
+    branches: [ deploy, master ]
     
 jobs:
   build:
@@ -59,12 +59,12 @@ jobs:
 
 
 
-    # - name: Push to Gitops
-    #   run: |
-    #     cd gitops
-    #     git config --global user.email "ejimchisom@gmail.com"
-    #     git config --global user.name "chis0m"
-    #     git add .
-    #     git commit -m "Deploying latest image"
-    #     git pull --rebase && git push origin master
-    #   if: steps.build_image.outcome == 'success'
+    - name: Push to Gitops
+      run: |
+        cd gitops
+        git config --global user.email "ejimchisom@gmail.com"
+        git config --global user.name "chis0m"
+        git add .
+        git commit -m "Deploying latest image"
+        git pull --rebase && git push origin master
+      if: steps.build_image.outcome == 'success'
