@@ -55,7 +55,7 @@ jobs:
         docker build -f be.Dockerfile . -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "Pushing image to ECR..."
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        sed -i "s@${AWS_REPOSITORY_URI}:[a-z0-9]*@${AWS_REPOSITORY_URI}:${IMAGE_TAG}@g" gitops/base/${{ env.DEPLOYMENT_PATH }}/deployment-be.yaml
+        sed -i "s@${AWS_REPOSITORY_URI}:[a-z0-9]*@${AWS_REPOSITORY_URI}:${IMAGE_TAG}@g" gitops/${{ env.DEPLOYMENT_PATH }}/deployment-be.yaml
 
 
 
