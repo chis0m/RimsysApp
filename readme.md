@@ -27,8 +27,10 @@ git clone https://github.com/chis0m/RimsysApp.git && cd RimsysApp; yarn install;
 ```
 
 ## Cloud Setup
+- Setup HostedZone on AWS Route53 and update the t`erraform.auto.tfvars` with your domain name
 - Run terraform script from [RimsysTerraform](https://github.com/chis0m/RimsysTerraform) to setup infrastructure
   - Update the terraform.auto.tfvars file to your own values first
+  -  Run `aws eks update-kubeconfig --region us-east-1 --name <your-cluster-name>` to setup kubeconfig
 - Apply argocd [application.yaml](https://github.com/chis0m/RimsysGitOps/blob/master/argocd/application.yaml) at [RimsysGitOps](https://github.com/chis0m/RimsysGitOps)
 - Access the argocd application 
     - Port Forward `kubectl port-forward svc/argocd-server 8080:443 -n argocd`
