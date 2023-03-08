@@ -23,8 +23,8 @@ jobs:
     - name: Checkout GitOps
       uses: actions/checkout@v3
       with:
-        repository: chis0m/gitops
-        path: ./gitops
+        repository: chis0m/RimsysGitOps
+        path: ./RimsysGitOps
         ref: master
         token: ${{ secrets.MY_GITHUB_TOKEN }}
 
@@ -55,13 +55,13 @@ jobs:
         docker build -f be.Dockerfile . -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
         echo "Pushing image to ECR..."
         docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-        sed -i "s@${AWS_REPOSITORY_URI}:[a-z0-9]*@${AWS_REPOSITORY_URI}:${IMAGE_TAG}@g" gitops/environments/${{ env.DEPLOYMENT_PATH }}/deployment-be.yaml
+        sed -i "s@${AWS_REPOSITORY_URI}:[a-z0-9]*@${AWS_REPOSITORY_URI}:${IMAGE_TAG}@g" RimsysGitOps/environments/${{ env.DEPLOYMENT_PATH }}/deployment-be.yaml
 
 
 
     # - name: Push to Gitops
     #   run: |
-    #     cd gitops
+    #     cd RimsysGitOps
     #     git config --global user.email "ejimchisom@gmail.com"
     #     git config --global user.name "chis0m"
     #     git add .
