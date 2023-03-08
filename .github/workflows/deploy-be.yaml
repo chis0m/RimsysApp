@@ -50,9 +50,6 @@ jobs:
       run: |
         # set Repository URI
         AWS_REPOSITORY_URI=$ECR_REGISTRY/$ECR_REPOSITORY
-        ls -al
-        echo $AWS_REPOSITORY_URI
-
         # Build a docker container and push it to ECR
         git_hash=$(git rev-parse --short "$GITHUB_SHA")
         docker build -f be.Dockerfile . -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
