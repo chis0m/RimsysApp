@@ -18,9 +18,7 @@ jobs:
       
     - name: Set Deployment Path
       run: |
-        if [ $GITHUB_REF_NAME == 'deploy-prod' ]; then
-          echo "DEPLOYMENT_PATH=base" >> $GITHUB_ENV
-        fi  
+        echo "DEPLOYMENT_PATH=base" >> $GITHUB_ENV
 
     - name: Checkout GitOps
       uses: actions/checkout@v3
